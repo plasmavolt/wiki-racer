@@ -1,0 +1,9 @@
+[project]
+name = "wiki-racer"
+version = "0.1.0"
+description = "Outputs the shortest path between two given Wikipedia pages."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "scrapy>=2.13.4",
+]
