@@ -42,7 +42,7 @@ similarities = model.similarity(page_curr_links_embeddings, page_end_text_embedd
 avg_similarities = similarities.mean(dim=1)
 max_similarities = similarities.max(dim=1).values
 
-# get top k best links
+# get top k best links, k = 10
 k = 10
 page_curr_links_best = torch.topk(max_similarities, k).indices
 
@@ -51,6 +51,9 @@ for idx in page_curr_links_best:
     link = page_curr_links[idx]
     score = max_similarities[idx].item()
     print(f"{link}: {score:.4f}")
+
+# take top k and rank based on word similarity
+
     
 # class PathOptimizer:
 #     def __init__(self):

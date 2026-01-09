@@ -1,0 +1,147 @@
+[
+  {
+    "start": "Philosophy",
+    "end": "Aristotle",
+    "difficulty": "easy"
+  },
+  {
+    "start": "France",
+    "end": "Paris",
+    "difficulty": "easy"
+  },
+  {
+    "start": "Dog",
+    "end": "German Shepherd",
+    "difficulty": "easy"
+  },
+  {
+    "start": "Mathematics",
+    "end": "Calculus",
+    "difficulty": "easy"
+  },
+  {
+    "start": "Basketball",
+    "end": "NBA",
+    "difficulty": "easy"
+  },
+  {
+    "start": "United States",
+    "end": "President of the United States",
+    "difficulty": "easy"
+  },
+  {
+    "start": "Solar System",
+    "end": "Earth",
+    "difficulty": "easy"
+  },
+  {
+    "start": "Europe",
+    "end": "Germany",
+    "difficulty": "easy"
+  },
+  {
+    "start": "Mathematics",
+    "end": "Gyros",
+    "difficulty": "medium"
+  },
+  {
+    "start": "World War II",
+    "end": "Sushi",
+    "difficulty": "medium"
+  },
+  {
+    "start": "Ancient Rome",
+    "end": "Coffee",
+    "difficulty": "medium"
+  },
+  {
+    "start": "Shakespeare",
+    "end": "Film",
+    "difficulty": "medium"
+  },
+  {
+    "start": "Evolution",
+    "end": "Computer",
+    "difficulty": "medium"
+  },
+  {
+    "start": "Olympic Games",
+    "end": "Chocolate",
+    "difficulty": "medium"
+  },
+  {
+    "start": "Democracy",
+    "end": "Toyota",
+    "difficulty": "medium"
+  },
+  {
+    "start": "Jazz",
+    "end": "Architecture",
+    "difficulty": "medium"
+  },
+  {
+    "start": "Iceland",
+    "end": "Bananas",
+    "difficulty": "medium"
+  },
+  {
+    "start": "Ancient Egypt",
+    "end": "Internet",
+    "difficulty": "medium"
+  },
+  {
+    "start": "Dinosaurs",
+    "end": "Space Shuttle",
+    "difficulty": "medium"
+  },
+  {
+    "start": "Quantum Physics",
+    "end": "Renaissance Art",
+    "difficulty": "hard"
+  },
+  {
+    "start": "Photosynthesis",
+    "end": "Hip Hop",
+    "difficulty": "hard"
+  },
+  {
+    "start": "Topology",
+    "end": "Sushi",
+    "difficulty": "hard"
+  },
+  {
+    "start": "Buddhism",
+    "end": "Baseball",
+    "difficulty": "hard"
+  },
+  {
+    "start": "Volcanoes",
+    "end": "Jazz",
+    "difficulty": "hard"
+  },
+  {
+    "start": "Genetics",
+    "end": "Gothic Architecture",
+    "difficulty": "hard"
+  },
+  {
+    "start": "Meteorology",
+    "end": "Video Games",
+    "difficulty": "hard"
+  },
+  {
+    "start": "Sahara Desert",
+    "end": "Penguins",
+    "difficulty": "hard"
+  },
+  {
+    "start": "Justice",
+    "end": "Pizza",
+    "difficulty": "hard"
+  },
+  {
+    "start": "Love",
+    "end": "Screwdriver",
+    "difficulty": "hard"
+  }
+]
