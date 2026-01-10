@@ -7,8 +7,8 @@ import torch.nn.functional as F
 
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-start = 'Measure (mathematics)'
-end = 'Ludwig Ahgren'
+start = "Measure (mathematics)"
+end = "Ludwig Ahgren"
 
 # Set up target page and encode its text
 page_end = wiki_wiki.page(end)
@@ -20,6 +20,7 @@ page_end_text_embeddings = model.encode(page_end_text_sentences, convert_to_tens
 # Initialize stack for DFS and seen set
 seen = set()
 k = 3
+
 
 def get_page_similarity(page_title):
     """Calculate how similar a page is to the target page."""
@@ -33,6 +34,7 @@ def get_page_similarity(page_title):
     weighted_avg = (similarities * softmax_similarities).sum(dim=1).mean().item()
 
     return weighted_avg, page
+
 
 def dfs(curr_title, path, parent_similarity):
     """DFS with backtracking when relevance decreases."""
@@ -51,7 +53,9 @@ def dfs(curr_title, path, parent_similarity):
     # Calculate current page similarity to target
     curr_similarity, _ = get_page_similarity(curr_page_title)
 
-    print(f"\nProcessing: {curr_page_title} (similarity: {curr_similarity:.4f}, parent: {parent_similarity:.4f})")
+    print(
+        f"\nProcessing: {curr_page_title} (similarity: {curr_similarity:.4f}, parent: {parent_similarity:.4f})"
+    )
 
     # Check if we reached the target
     if curr_page_title == page_end_title:
@@ -72,7 +76,9 @@ def dfs(curr_title, path, parent_similarity):
 
     # Encode and compare links to target page
     page_curr_links_embeddings = model.encode(page_curr_links, convert_to_tensor=True)
-    similarities = model.similarity(page_curr_links_embeddings, page_end_text_embeddings)
+    similarities = model.similarity(
+        page_curr_links_embeddings, page_end_text_embeddings
+    )
 
     # Apply softmax weighted average
     softmax_similarities = F.softmax(similarities, dim=1)
@@ -94,6 +100,7 @@ def dfs(curr_title, path, parent_similarity):
             return result
 
     return None
+
 
 # Start DFS
 result_path = dfs(start, [], float("-inf"))

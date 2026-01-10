@@ -6,6 +6,7 @@ from collections import deque
 import requests
 from link import Link
 
+
 def main():
     # start = input("starting url: ")
     # end = input("ending url: ")
@@ -13,6 +14,7 @@ def main():
     end = "https://en.wikipedia.org/wiki/List_of_geometers"
     Link = bfs(start, end)
     print(Link)
+
 
 def parse(url: str) -> list:
     """
@@ -26,10 +28,7 @@ def parse(url: str) -> list:
     """
 
     # Set headers to avoid blocking
-    headers = {
-        'User-Agent': 'Mozilla/5.0',
-        'Accept-Language': 'en-US,en;q=0.5'
-    }
+    headers = {"User-Agent": "Mozilla/5.0", "Accept-Language": "en-US,en;q=0.5"}
 
     # Fetch the page
     res = requests.get(url, headers=headers)
@@ -39,8 +38,9 @@ def parse(url: str) -> list:
     dom = etree.HTML(str(soup))
 
     # Extract links using XPath
-    links = dom.xpath('//p/a/@href')
+    links = dom.xpath("//p/a/@href")
     return links
+
 
 def bfs(start: str, end: str) -> Optional[Link]:
     """
@@ -53,9 +53,9 @@ def bfs(start: str, end: str) -> Optional[Link]:
     Returns:
         Link: a Link object with the shortest Link found
     """
-    queue = deque() # stores Link objects
-    seen = set() # stores url strings
-    
+    queue = deque()  # stores Link objects
+    seen = set()  # stores url strings
+
     queue.append(Link(start, [start]))
     while len(queue) > 0:
         curr = queue.popleft()
@@ -63,16 +63,17 @@ def bfs(start: str, end: str) -> Optional[Link]:
         if curr.url in seen:
             continue
         seen.add(curr.url)
-        
+
         if curr.url == end:
             return curr
-        
+
         for link in parse(curr.url):
             if link not in seen:
-                full_link = 'https://' + urlparse(curr.url).netloc + link
+                full_link = "https://" + urlparse(curr.url).netloc + link
                 new_path = curr.path[:]
                 new_path.append(full_link)
                 queue.append(Link(full_link, new_path))
+
 
 if __name__ == "__main__":
     main()
