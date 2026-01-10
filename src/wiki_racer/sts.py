@@ -64,7 +64,7 @@ def dfs(curr_title, path, parent_similarity):
 
     # Abandon path if we're getting further from target
     if curr_similarity < parent_similarity * 0.9:  # 10% tolerance
-        print(f"  Abandoning path - similarity decreased too much")
+        print("  Abandoning path - similarity decreased too much")
         return None
 
     # Get links on current page
@@ -105,7 +105,7 @@ def dfs(curr_title, path, parent_similarity):
 # Start DFS
 result_path = dfs(start, [], float("-inf"))
 if result_path:
-    print(f"\n=== SUCCESS ===")
+    print("\n=== SUCCESS ===")
     print(f"Path length: {len(result_path)}")
     print(f"Path: {' -> '.join(result_path)}")
 else:
